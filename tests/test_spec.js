@@ -1,8 +1,7 @@
 define([
     'chai',
     'sinon',
-    'jquery',
-    '../../js/test'
+    '../js/test'
 ], function (chai, sinon, $, Test) {
     'use strict';
 

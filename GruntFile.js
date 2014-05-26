@@ -15,8 +15,8 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         dir: {
-            js: 'static/js',
-            testsclient: 'tests/client'
+            js: 'js',
+            tests: 'tests'
         },
 
         /**
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         */
         jshint: {
             all: [
-                '<%= dir.js %>/server/*.js',
+                '<%= dir.js %>/*.js',
                 'Grunfile.js'
             ],
             options: {
@@ -35,14 +35,17 @@ module.exports = function(grunt) {
 
         // Client tests with requirejs
         mocha_phantomjs: {
-            all: ['tests/client/**/*.html']
+            all: ['tests/**/*.html']
         },
 
         // The watch command watches a given set of files and runs a task when one of them changes.
         watch: {
-            testsclient: {
-                files: ['<%= dir.testsclient %>/**/*_spec.js'],
-                tasks: ['mocha_phantomjs']
+            tests: {
+                files: [
+                    '<%= dir.tests %>/**/*_spec.js',
+                    '<%= dir.js %>/**/*.js'
+                ],
+                tasks: ['mocha_phantomjs', 'jshint']
             },
 
             /**
@@ -60,5 +63,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('test-client', ['watch:testsclient']);
+    grunt.registerTask('test', ['watch:tests']);
 };

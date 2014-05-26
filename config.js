@@ -2,9 +2,9 @@ require.config({
     baseUrl: '.',
     urlArgs: 'bust=' + (new Date()).getTime(),
     paths: {
-        'mocha': '../../node_modules/mocha/mocha',
-        'chai': '../../node_modules/chai/chai',
-        'sinon': '../../node_modules/sinon/pkg/sinon'
+        'mocha': 'node_modules/mocha/mocha',
+        'chai': 'node_modules/chai/chai',
+        'sinon': 'node_modules/sinon/pkg/sinon'
     },
     shim: {
         'mocha': {
@@ -24,7 +24,7 @@ require(['require', 'mocha'], function (require, mocha) {
 
     mocha.setup('bdd');
 
-    require(['test_spec'], function () {
+    require(['tests/test_spec'], function () {
         (window.mochaPhantomJS || mocha).run();
     });
 });
