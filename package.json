@@ -1,0 +1,27 @@
+{
+  "name": "mocha-seyup",
+  "version": "0.0.1",
+  "description": "Mocha testing on steroids",
+  "main": "GruntFile.js",
+  "author": {
+    "name": "Steve Vadocz",
+    "url": "http://blog.steveis.guru"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node index"
+  },
+  "engine": "node >= 0.8.8",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "requirejs": "~2.1.9",
+    "grunt-mocha-cli": "~1.7.0",
+    "grunt-mocha-phantomjs": "~0.4.3",
+    "mocha": "~1.18.2",
+    "chai": "~1.9.1",
+    "sinon": "~1.9.0",
+    "matchdep": "~0.3.0"
+  }
+}
